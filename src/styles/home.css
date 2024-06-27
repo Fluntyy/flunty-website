@@ -1,0 +1,36 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container a {
+  width: 100%;
+  background-color: var(--button-color);
+  border-radius: 18px;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: none;
+  transition: all 0.25s;
+}
+
+.button-container div .button {
+  padding: 0.75rem 2rem;
+}
+
+.button-container .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button-container > * {
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: var(--button-color-hover);
+}
