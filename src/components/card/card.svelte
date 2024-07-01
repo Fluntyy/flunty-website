@@ -43,6 +43,5 @@
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
     transition: all 0.4s ease;
-    animation: fade 2s;
   }
 </style>

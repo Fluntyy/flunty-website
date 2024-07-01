@@ -8,6 +8,7 @@
   let favicon = faviconLight;
   let theme = "light";
   let icon = "moon.svg";
+  let themecolor = "#5e7c92";
 
   const toggleTheme = () => {
     theme = theme === "dark" ? "light" : "dark";
@@ -15,6 +16,7 @@
     saveTheme();
     changeIcon();
     changeFavicon();
+    changeThemeColor();
   };
 
   const updateTheme = () => {
@@ -26,6 +28,11 @@
     document.documentElement.className = theme;
     changeIcon();
     changeFavicon();
+    changeThemeColor();
+  };
+
+  const changeThemeColor = () => {
+    themecolor = theme === "dark" ? "#1a2730" : "#5e7c92";
   };
 
   const changeIcon = () => {
@@ -45,15 +52,11 @@
 
 <svelte:head>
   <link rel="icon" href={favicon} />
+  <meta name="theme-color" content={themecolor}>
 </svelte:head>
 
 <button type="button" on:click={toggleTheme} class="theme-button" tabindex="0">
-  <img
-    src={icon}
-    alt="Toggle Theme"
-    class="theme-icon"
-    draggable="false"
-  />
+  <img src={icon} alt="Toggle Theme" class="theme-icon" draggable="false" />
 </button>
 
 <style>

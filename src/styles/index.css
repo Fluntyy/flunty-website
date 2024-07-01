@@ -97,3 +97,6 @@ body {
     }
   }
 
+  .fade {
+    animation: fade 2s;
+  }
