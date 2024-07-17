@@ -2,6 +2,7 @@
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
 *, *::after, *::before {
+    -webkit-tap-highlight-color: transparent;
     margin: 0;
     padding: 0;
 }
@@ -21,11 +22,11 @@ body {
     );
     --button-color: #3a5d7a;
     --button-color-hover: #34536e;
-    --theme-icon: url(./moon.svg);
-    --m1: url("./mountain/4.svg");
-    --m2: url("./mountain/3.svg");
-    --m3: url("./mountain/2.svg");
-    --m4: url("./mountain/1.svg");
+    --theme-icon: url(moon.svg);
+    --m1: url("/mountain/4.svg");
+    --m2: url("/mountain/3.svg");
+    --m3: url("/mountain/2.svg");
+    --m4: url("/mountain/1.svg");
   }
   
   @media (prefers-color-scheme: dark) {
@@ -36,11 +37,11 @@ body {
       );
       --button-color: #1f3545;
       --button-color-hover: #1b2f3e;
-      --theme-icon: url(./sun.svg);
-      --m1: url("./mountain/dark/4.svg");
-      --m2: url("./mountain/dark/3.svg");
-      --m3: url("./mountain/dark/2.svg");
-      --m4: url("./mountain/dark/1.svg");
+      --theme-icon: url(sun.svg);
+      --m1: url("/mountain/dark/4.svg");
+      --m2: url("/mountain/dark/3.svg");
+      --m3: url("/mountain/dark/2.svg");
+      --m4: url("/mountain/dark/1.svg");
     }
   }
   
@@ -51,15 +52,15 @@ body {
     );
     --button-color: #1f3545;
     --button-color-hover: #1b2f3e;
-    --theme-icon: url(./sun.svg);
-    --m1: url("./mountain/dark/4.svg");
-    --m2: url("./mountain/dark/3.svg");
-    --m3: url("./mountain/dark/2.svg");
-    --m4: url("./mountain/dark/1.svg");
+    --theme-icon: url(sun.svg);
+    --m1: url("/mountain/dark/4.svg");
+    --m2: url("/mountain/dark/3.svg");
+    --m3: url("/mountain/dark/2.svg");
+    --m4: url("/mountain/dark/1.svg");
   }
   
   .montserrat-bold {
-    font-family: "Montserrat", sans-serif;
+    font-family: "montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
@@ -67,7 +68,7 @@ body {
   }
   
   .montserrat-semibold {
-    font-family: "Montserrat", sans-serif;
+    font-family: "montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
@@ -75,7 +76,7 @@ body {
   }
 
   .montserrat-regular {
-    font-family: "Montserrat", sans-serif;
+    font-family: "montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;

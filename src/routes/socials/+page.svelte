@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="src/styles/socials.css" />
+  <link rel="stylesheet" href="styles/socials.css" />
 </svelte:head>
 
 <Card width="56.25rem" height="33.75rem" style="">

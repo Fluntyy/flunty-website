@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../styles/index.css";
+  import "$lib/index.css";
   import Background from "../components/background.svelte";
   import ThemeButton from "../components/theme_button.svelte";
   import { fade, opacity } from "$lib/stores.js";
