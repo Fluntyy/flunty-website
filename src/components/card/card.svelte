@@ -1,13 +1,14 @@
 <script>
+  import { fade, opacity } from '$lib/stores.js';
+  import { scale } from "svelte/transition";
   export let width;
   export let height;
   export let style;
-  import { scale } from "svelte/transition";
 </script>
 
 <div class="card-container">
-  <div class="card" style="width: {width}; height: {height}; {style}" transition:scale>
-    <slot></slot>
+  <div class="card" style="width: {width}; height: {height}; {style};" class:fade={$fade == 1} class:opacity={$opacity == 1} transition:scale>
+    <slot />
   </div>
 </div>
 
@@ -19,9 +20,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     user-select: none;
   }
 
@@ -38,7 +36,6 @@
     border: solid 4px transparent;
     border-radius: 4rem;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
-    -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;

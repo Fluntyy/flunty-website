@@ -1,11 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import { afterUpdate } from "svelte";
 
-  import faviconLight from "$lib/favicon.svg";
-  import faviconDark from "$lib/favicon-dark.svg";
-
-  let favicon = faviconLight;
+  let favicon = "favicon.svg";
   let theme = "light";
   let icon = "moon.svg";
   let themecolor = "#5e7c92";
@@ -40,7 +36,7 @@
   };
 
   const changeFavicon = () => {
-    favicon = theme === "dark" ? faviconDark : faviconLight;
+    favicon = theme === "dark" ? "favicon_dark.svg" : "favicon.svg";
   };
 
   const saveTheme = () => {
@@ -69,8 +65,6 @@
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     user-select: none;
     width: 3.5rem;
     height: 3.5rem;
@@ -82,7 +76,6 @@
     border: solid 4px transparent;
     border-radius: 1rem;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
-    -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;

@@ -27,8 +27,6 @@
     height: 100%;
     background-image: var(--background-gradient);
     pointer-events: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     user-select: none;
   }
 

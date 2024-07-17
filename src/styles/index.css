@@ -50,6 +50,7 @@ body {
       rgba(0, 0, 0, 1) 100%
     );
     --button-color: #1f3545;
+    --button-color-hover: #1b2f3e;
     --theme-icon: url(./sun.svg);
     --m1: url("./mountain/dark/4.svg");
     --m2: url("./mountain/dark/3.svg");
@@ -63,7 +64,6 @@ body {
     font-weight: 700;
     font-style: normal;
     color: white;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   
   .montserrat-semibold {
@@ -72,7 +72,14 @@ body {
     font-weight: 600;
     font-style: normal;
     color: white;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
   }
   
   .transition {
@@ -99,4 +106,8 @@ body {
 
   .fade {
     animation: fade 2s;
+  }
+
+  .opacity {
+    opacity: 0;
   }

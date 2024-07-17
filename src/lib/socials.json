@@ -1,0 +1,51 @@
+[
+    {
+      "backgroundColor": "#171A21",
+      "hoverBackgroundColor": "#14171D",
+      "iconPath": "icon/steam.svg",
+      "platformName": "Steam",
+      "profileName": "Flunty",
+      "link": "https://steamcommunity.com/id/fluntyet" 
+    },
+    {
+      "backgroundColor": "#24292E",
+      "hoverBackgroundColor": "#202429",
+      "iconPath": "icon/github.svg",
+      "platformName": "GitHub",
+      "profileName": "Fluntyy",
+      "link": "https://github.com/Fluntyy"
+    },
+    {
+      "backgroundColor": "#5865F2",
+      "hoverBackgroundColor": "#4F5BDA",
+      "iconPath": "icon/discord.svg",
+      "platformName": "Discord",
+      "profileName": "flunty.xyz",
+      "link": "https://discord.com/users/901872201454747678"
+    },
+    {
+      "backgroundColor": "#E30000",
+      "hoverBackgroundColor": "#CC0000",
+      "iconPath": "icon/youtube.svg",
+      "platformName": "YouTube",
+      "profileName": "@fluntyxyz",
+      "link": "https://youtube.com/@fluntyxyz"
+    },
+    {
+      "backgroundColor": "#000000",
+      "hoverBackgroundColor": "#000000",
+      "iconPath": "icon/x.svg",
+      "platformName": "X",
+      "profileName": "@Fluntyy",
+      "link": "https://x.com/Fluntyy"
+    },
+    {
+      "backgroundColor": "#7B0099",
+      "hoverBackgroundColor": "#6E008A",
+      "iconPath": "icon/email.svg",
+      "platformName": "Email",
+      "profileName": "me@flunty.xyz",
+      "link": "mailto:me@flunty.xyz"
+    }
+  ]
+  

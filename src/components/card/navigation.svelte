@@ -1,8 +1,14 @@
+<script>
+  function back() {
+    window.history.back();
+  }
+</script>
+
 <div class="nav">
-  <a class="back" href="../">
+  <button class="back" on:click={back}>
     <i class="fa-solid fa-arrow-left"></i>
-  </a>
-  <span class="montserrat-bold" style="font-size: 2.25rem"><slot></slot></span>
+  </button>
+  <span class="montserrat-bold" style="font-size: 2.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><slot></slot></span>
 </div>
 
 <style>
@@ -26,6 +32,9 @@
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
     text-decoration: none;
     transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+    outline: none;
   }
 
   .back:hover {
