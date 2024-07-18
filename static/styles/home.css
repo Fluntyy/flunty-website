@@ -71,16 +71,17 @@
 @media (max-width: 39rem) {
   .card {
     width: 100% !important;
-    height: 30rem !important;
+    max-width: 100%;
+    height: 25rem !important;
     margin: 1.5rem;
   }
 
   .card > .montserrat-bold {
-    font-size: 2.5rem !important;
+    font-size: min(8.5vw, 2.5rem) !important;
   }
 
   .card > .montserrat-semibold {
-    font-size: 1.25rem !important;
+    font-size: min(3.5vw, 1.25rem) !important;
   }
 
   .button-container {
@@ -88,6 +89,7 @@
       'projects'
       'about'
       'socials';
+    margin-top: 0.75rem;
   }
 
   .button {
