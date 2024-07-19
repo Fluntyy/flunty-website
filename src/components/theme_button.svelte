@@ -1,9 +1,9 @@
 <script>
   import { onMount } from "svelte";
 
-  let favicon = "favicon.svg";
+  let favicon = "/favicon.svg";
   let theme = "light";
-  let icon = "moon.svg";
+  let icon = "/moon.svg";
   let themecolor = "#5e7c92";
 
   const toggleTheme = () => {
@@ -32,11 +32,11 @@
   };
 
   const changeIcon = () => {
-    icon = theme === "dark" ? "sun.svg" : "moon.svg";
+    icon = theme === "dark" ? "/sun.svg" : "/moon.svg";
   };
 
   const changeFavicon = () => {
-    favicon = theme === "dark" ? "favicon_dark.svg" : "favicon.svg";
+    favicon = theme === "dark" ? "/favicon_dark.svg" : "/favicon.svg";
   };
 
   const saveTheme = () => {

@@ -14,7 +14,6 @@
 <style>
   .nav {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     padding: 3rem 3rem 1rem;
     align-self: flex-start;

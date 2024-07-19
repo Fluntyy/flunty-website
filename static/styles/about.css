@@ -1,0 +1,22 @@
+.about-container {
+  padding: 0 48px 0;
+  overflow: auto;
+  margin-bottom: 3rem;
+  user-select: text;
+  cursor: text;
+}
+
+.icons {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+@media (max-width: 57.75rem) {
+  .card {
+    width: 100% !important;
+    height: 40rem !important;
+    margin: 1.5rem;
+  }
+}

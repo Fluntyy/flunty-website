@@ -6,6 +6,7 @@
 </script>
 
 <svelte:head>
+  <title>Socials - Flunty's Website</title>
   <link rel="stylesheet" href="styles/socials.css" />
 </svelte:head>
 
