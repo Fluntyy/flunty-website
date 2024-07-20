@@ -50,7 +50,6 @@
     :global(.card) {
       width: 100% !important;
       max-width: 100%;
-      height: 25rem !important;
       margin: 1.5rem;
     }
 
