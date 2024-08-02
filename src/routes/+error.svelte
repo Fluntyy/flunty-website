@@ -11,20 +11,20 @@
   <div class="header-container">
     <span
       class="montserrat-bold"
-      style="font-size: 3rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"
+      style="font-size: 3rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); text-align: center;"
       >{$page.status} - {$page.error?.message}</span
     >
   </div>
   {#if $page.status === 404}
     <span
       class="montserrat-semibold"
-      style="font-size: 1.5rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"
+      style="font-size: 1.5rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); padding: 0 3rem 0 3rem; text-align: center;"
       >The page you're looking for doesn't exist.</span
     >
   {:else}
     <span
       class="montserrat-semibold"
-      style="font-size: 1.5rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"
+      style="font-size: 1.5rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); padding: 0 3rem 0 3rem; text-align: center;"
       >An error has encountered when loading this page.</span
     >
   {/if}
@@ -54,7 +54,7 @@
     }
 
     :global(.header-container) > .montserrat-bold {
-      font-size: min(8.5vw, 2.5rem) !important;
+      font-size: min(7vw, 2.5rem) !important;
     }
 
     :global(.card) > .montserrat-semibold {

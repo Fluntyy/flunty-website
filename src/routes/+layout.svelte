@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "$lib/index.css";
+  import '@fortawesome/fontawesome-free/css/all.min.css';
   import Background from "../components/background.svelte";
   import ThemeButton from "../components/theme_button.svelte";
   import { fade, opacity } from "$lib/stores.js";
@@ -14,6 +14,10 @@
     }, 2000); 
   });
 </script>
+
+<svelte:head>
+  <link rel="stylesheet" href="/styles/index.css">
+</svelte:head>
 
 <Background></Background>
 <ThemeButton></ThemeButton>
