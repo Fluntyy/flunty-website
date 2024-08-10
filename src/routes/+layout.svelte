@@ -6,7 +6,6 @@
   import { onMount } from "svelte";
 
   onMount(() => {
-    console.log(opacity);
     fade.set(1);
     opacity.set(0);
     setTimeout(() => {

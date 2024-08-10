@@ -31,37 +31,57 @@
   }
 
   @keyframes m1 {
-    from {
+    0% {
       bottom: -100%;
     }
-    to {
+    
+    20% {
+      bottom: -100%;
+    }
+
+    100% {
       bottom: 0;
     }
   }
 
   @keyframes m2 {
-    from {
+    0% {
       bottom: -110%;
     }
-    to {
+    
+    20% {
+      bottom: -110%;
+    }
+
+    100% {
       bottom: 0;
     }
   }
 
   @keyframes m3 {
-    from {
+    0% {
       bottom: -120%;
     }
-    to {
+    
+    20% {
+      bottom: -120%;
+    }
+
+    100% {
       bottom: 0;
     }
   }
 
   @keyframes m4 {
-    from {
+    0% {
       bottom: -130%;
     }
-    to {
+    
+    20% {
+      bottom: -130%;
+    }
+
+    100% {
       bottom: 0;
     }
   }
@@ -77,19 +97,19 @@
   }
 
   .mountain:nth-of-type(1) {
-    animation: m1 1s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m1 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m1);
   }
   .mountain:nth-of-type(2) {
-    animation: m2 1s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m2 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m2);
   }
   .mountain:nth-of-type(3) {
-    animation: m3 1s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m3 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m3);
   }
   .mountain:nth-of-type(4) {
-    animation: m4 1s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m4 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m4);
   }
 </style>

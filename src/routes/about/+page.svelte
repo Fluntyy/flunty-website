@@ -1,12 +1,11 @@
 <script>
   import Card from "../../components/card/card.svelte";
   import Navigation from "../../components/card/navigation.svelte";
-  import SocialsButton from "../../components/socials_button.svelte";
-  import socials from "$lib/socials.json";
 </script>
 
 <svelte:head>
   <title>About - Flunty's Website</title>
+  <link rel="preload" href="styles/about.css" as="style" />
   <link rel="stylesheet" href="styles/about.css" />
 </svelte:head>
 

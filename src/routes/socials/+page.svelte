@@ -7,6 +7,7 @@
 
 <svelte:head>
   <title>Socials - Flunty's Website</title>
+  <link rel="preload" href="styles/socials.css" as="style" />
   <link rel="stylesheet" href="styles/socials.css" />
 </svelte:head>
 
