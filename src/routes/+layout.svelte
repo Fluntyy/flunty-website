@@ -10,7 +10,7 @@
     opacity.set(0);
     setTimeout(() => {
       fade.set(0);
-    }, 2000); 
+    }, 3500); 
   });
 </script>
 

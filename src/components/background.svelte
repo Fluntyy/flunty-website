@@ -31,63 +31,57 @@
   }
 
   @keyframes m1 {
-    0% {
+    from {
       bottom: -100%;
-    }
-    
-    20% {
-      bottom: -100%;
+      visibility: visible;
     }
 
-    100% {
+    to {
       bottom: 0;
+      visibility: visible;
     }
   }
 
   @keyframes m2 {
-    0% {
+    from {
       bottom: -110%;
-    }
-    
-    20% {
-      bottom: -110%;
+      visibility: visible;
     }
 
-    100% {
+    to {
       bottom: 0;
+      visibility: visible;
     }
   }
 
   @keyframes m3 {
-    0% {
+    from {
       bottom: -120%;
-    }
-    
-    20% {
-      bottom: -120%;
+      visibility: visible;
     }
 
-    100% {
+    to {
       bottom: 0;
+      visibility: visible;
     }
   }
 
   @keyframes m4 {
-    0% {
+    from {
       bottom: -130%;
-    }
-    
-    20% {
-      bottom: -130%;
+      visibility: visible;
     }
 
-    100% {
+    to {
       bottom: 0;
+      visibility: visible;
     }
   }
 
   .mountain {
+    animation-delay: .5s !important;
     position: absolute;
+    visibility: hidden;
     bottom: 0;
     width: 100%;
     transition:
@@ -97,19 +91,19 @@
   }
 
   .mountain:nth-of-type(1) {
-    animation: m1 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m1 1.25s forwards cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m1);
   }
   .mountain:nth-of-type(2) {
-    animation: m2 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m2 1.25s forwards cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m2);
   }
   .mountain:nth-of-type(3) {
-    animation: m3 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m3 1.25s forwards cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m3);
   }
   .mountain:nth-of-type(4) {
-    animation: m4 1.25s cubic-bezier(0.27, 0.1, 0.19, 0.99);
+    animation: m4 1.25s forwards cubic-bezier(0.27, 0.1, 0.19, 0.99);
     content: var(--m4);
   }
 </style>
