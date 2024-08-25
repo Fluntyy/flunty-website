@@ -1,4 +1,4 @@
-import { redirect } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
 import socials from "$lib/socials.json";
 
 export function load({ params }) {
@@ -7,5 +7,7 @@ export function load({ params }) {
 
   if (social && social.link) {
     throw redirect(302, social.link);
+  } else {
+    throw error(404, "Not Found");
   }
 }
