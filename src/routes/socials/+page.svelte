@@ -22,7 +22,7 @@
           iconPath={social.iconPath}
           platformName={social.platformName}
           profileName={social.profileName}
-          link={social.link}
+          link={`/${social.platformName.toLowerCase()}`}
         />
       </div>
     {/each}
