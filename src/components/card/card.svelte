@@ -1,9 +1,20 @@
 <script>
   import { fade, opacity } from '$lib/stores.js';
   import { scale } from "svelte/transition";
+  import { onMount } from "svelte";
   export let width;
   export let height;
   export let style;
+
+  let socials;
+
+  onMount(async () => {
+  const response = await fetch("https://api.flunty.xyz/profiles"); 
+    const data = await response.json();
+    if (data.statusCode === 200) {
+      socials = data.data;
+    }
+  });
 </script>
 
 <div class="card-container">

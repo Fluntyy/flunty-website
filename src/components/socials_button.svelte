@@ -56,12 +56,15 @@
       ? twitterPlatformName
       : platformName}
   />
-  <span class="montserrat-bold"
+  <span class="montserrat-bold" style="margin-right: 1rem;"
     >{isShiftHeld && platformName === "X"
       ? twitterPlatformName
       : platformName}</span
   >
-  <span class="montserrat-regular" style="margin-left: auto">{profileName}</span
+  <span
+    class="montserrat-regular"
+    style="margin-left: auto;"
+    >{profileName}</span
   >
 </a>
 

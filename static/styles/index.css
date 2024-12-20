@@ -82,6 +82,10 @@ body {
     color: white;
   }
   
+  b, strong {
+    font-weight: 700;
+  }
+
   .transition {
     transition: all 0.5s ease;
   }

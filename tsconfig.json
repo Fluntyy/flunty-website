@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "verbatimModuleSyntax": true,
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "types": ["svelte"],
+      "allowSyntheticDefaultImports": true
+    }
+  }
+  

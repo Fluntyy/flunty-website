@@ -1,8 +1,8 @@
 <script lang="ts">
-  import '@fortawesome/fontawesome-free/css/all.min.css';
+  import "@fortawesome/fontawesome-free/css/all.min.css";
   import Background from "../components/background.svelte";
   import ThemeButton from "../components/theme_button.svelte";
-  import { fade, opacity } from "$lib/stores.js";
+  import { fade, opacity, socials } from "$lib/stores.js";
   import { onMount } from "svelte";
 
   onMount(() => {
@@ -10,12 +10,12 @@
     opacity.set(0);
     setTimeout(() => {
       fade.set(0);
-    }, 3500); 
+    }, 3500);
   });
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/index.css" />
 </svelte:head>
 
 <Background></Background>
