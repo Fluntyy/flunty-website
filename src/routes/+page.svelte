@@ -4,7 +4,6 @@
 
 <svelte:head>
   <title>Flunty's Website</title>
-  <link rel="preload" href="styles/home.css" as="style" />
   <link rel="stylesheet" href="styles/home.css" />
 </svelte:head>
 

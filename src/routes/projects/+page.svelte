@@ -1,24 +1,35 @@
 <script>
+  import { onMount } from "svelte";
   import Card from "../../components/card/card.svelte";
   import Navigation from "../../components/card/navigation.svelte";
   import SocialsButton from "../../components/socials_button.svelte";
   import { api } from "../../api";
+  import { projectsStore } from "$lib/stores.js";
 
-  let isLoading = true;
-  let projects = [];
+  let isLoading;
+  let projects;
   let currentIndex = 0;
 
-  api.get("projects")
-    .then((res) => {
-      projects = res.data.data.map(project => ({
-        ...project,
-        date: new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-      }));
-      isLoading = false;
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  projectsStore.subscribe(value => {
+    isLoading = value.isLoading;
+    projects = value.projects;
+  });
+
+  onMount(() => {
+    if (projects.length === 0) {
+      api.get("projects")
+        .then((res) => {
+          const fetchedProjects = res.data.data.map(project => ({
+            ...project,
+            date: new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+          }));
+          projectsStore.set({ isLoading: false, projects: fetchedProjects });
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  });
 
   function prev() {
     currentIndex = (currentIndex - 1 + projects.length) % projects.length;
@@ -31,7 +42,6 @@
 
 <svelte:head>
   <title>Projects - Flunty's Website</title>
-  <link rel="preload" href="styles/projects.css" as="style" />
   <link rel="stylesheet" href="styles/projects.css" />
 </svelte:head>
 

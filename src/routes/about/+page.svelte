@@ -5,7 +5,6 @@
 
 <svelte:head>
   <title>About - Flunty's Website</title>
-  <link rel="preload" href="styles/about.css" as="style" />
   <link rel="stylesheet" href="styles/about.css" />
 </svelte:head>
 

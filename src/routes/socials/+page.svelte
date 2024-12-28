@@ -4,23 +4,31 @@
   import Navigation from "../../components/card/navigation.svelte";
   import SocialsButton from "../../components/socials_button.svelte";
   import { api } from "../../api";
+  import { socialsStore } from "$lib/stores.js";
 
-  let isLoading = true;
-  let socials: { backgroundColor: string; hoverBackgroundColor: string; iconPath: string; platformName: string; profileName: string; }[] = [];
+  let isLoading;
+  let socials;
 
-  api.get("profiles")
-  .then((res: { data: { data: { backgroundColor: string; hoverBackgroundColor: string; iconPath: string; platformName: string; profileName: string; }[] } }) => {
-    socials = res.data.data;
-    isLoading = false;
-  })
-  .catch((err: any) => {
-    console.error(err);
+  socialsStore.subscribe(value => {
+    isLoading = value.isLoading;
+    socials = value.socials;
+  });
+
+  onMount(() => {
+    if (socials.length === 0) {
+      api.get("profiles")
+        .then((res) => {
+          socialsStore.set({ isLoading: false, socials: res.data.data });
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   });
 </script>
 
 <svelte:head>
   <title>Socials - Flunty's Website</title>
-  <link rel="preload" href="styles/socials.css" as="style" />
   <link rel="stylesheet" href="styles/socials.css" />
 </svelte:head>
 
