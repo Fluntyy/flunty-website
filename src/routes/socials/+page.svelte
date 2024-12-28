@@ -6,15 +6,14 @@
   import { api } from "../../api";
 
   let isLoading = true;
-  let socials = [];
+  let socials: { backgroundColor: string; hoverBackgroundColor: string; iconPath: string; platformName: string; profileName: string; }[] = [];
 
   api.get("profiles")
-  .then((res) => {
-    console.log(res.data.data);
+  .then((res: { data: { data: { backgroundColor: string; hoverBackgroundColor: string; iconPath: string; platformName: string; profileName: string; }[] } }) => {
     socials = res.data.data;
     isLoading = false;
   })
-  .catch((err) => {
+  .catch((err: any) => {
     console.error(err);
   });
 </script>

@@ -8,7 +8,7 @@
   <button class="back" on:click={back}>
     <i class="fa-solid fa-arrow-left"></i>
   </button>
-  <span class="montserrat-bold" style="font-size: 2.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><slot></slot></span>
+  <span class="montserrat-bold navtitle" style="font-size: 2.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><slot></slot></span>
 </div>
 
 <style>
@@ -43,5 +43,18 @@
   .back > i {
     font-size: 2.25rem;
     color: white;
+  }
+
+  @media (max-width: 57.75rem) {
+    .navtitle {
+      font-size: 1.75rem !important;
+    }
+    .back {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+    .back > i {
+      font-size: 2rem;
+    }
   }
 </style>

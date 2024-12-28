@@ -1,3 +1,10 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .nav-wrapper {
   display: flex;
   width: 100%;
@@ -6,9 +13,19 @@
 
 .projects-nav-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: right;
   gap: 1.5rem;
   padding: 3rem 3rem 1rem;
   margin-left: auto;
+}
+
+.projects-nav-wrapper-mobile {
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  display: none;
 }
 
 .projects-nav {
@@ -29,7 +46,6 @@
 
 .projects-container {
   display: flex;
-  padding: 0 48px 0;
   margin-bottom: 3rem;
   width: 100%;
   height: 100%;
@@ -37,16 +53,36 @@
 
 .projects-card {
   display: flex;
-  background-image: url("https://placehold.co/804x364/png");
+  background-size: cover;
+  background-position: center;
+  margin: 0 3rem 0;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 100%;
+  align-items: flex-end;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+  color: white;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
 }
 
 i {
-  font-size: 2rem;
   color: white;
+}
+
+.links > i {
+  font-size: 1.5rem !important;
 }
 
 @media (max-width: 57.75rem) {
@@ -54,5 +90,49 @@ i {
     width: 100% !important;
     height: 40rem !important;
     margin: 1.5rem;
+    gap: 0 !important;
+  }
+
+  .nav-wrapper {
+    padding: 0;
+  }
+
+  .projects-container {
+    margin-bottom: 0;
+  }
+
+  .projects-nav-wrapper {
+    display: none;
+  }
+
+  .projects-nav-wrapper-mobile {
+    display: flex;
+  }
+
+  .projects-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+  }
+
+  .project-details {
+    padding: 0;
+    width: auto;
+    margin: 0 1.5rem 0;
+  }
+
+  .title {
+    font-size: 1.5rem !important;
+  }
+
+  .description {
+    font-size: 0.75rem !important;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
   }
 }

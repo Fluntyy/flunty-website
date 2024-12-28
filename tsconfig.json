@@ -1,14 +1,31 @@
 {
-    "compilerOptions": {
-      "verbatimModuleSyntax": true,
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "target": "esnext",
-      "module": "esnext",
-      "moduleResolution": "node",
-      "types": ["svelte"],
-      "allowSyntheticDefaultImports": true
-    }
-  }
-  
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "types": ["svelte"],
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "../node_modules/",
+    "/node_modules/",
+    "./[!ambient.d.ts]",
+    "/.svelte-kit/",
+    "../.svelte-kit/**",
+    "../src/service-worker.js",
+    "../src/service-worker.ts",
+    "../src/service-worker.d.ts",
+    "../dist/**",
+    "../build/**",
+    "../.svelte-kit/**",
+    "../.svelte/**",
+    "../.vercel_build_output/**",
+    "../.vercel/**",
+    "../coverage/**",
+    "**/_/**"
+  ]
+}
