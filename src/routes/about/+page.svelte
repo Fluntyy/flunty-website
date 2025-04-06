@@ -1,12 +1,37 @@
 <script>
   import Card from "../../components/card/card.svelte";
   import Navigation from "../../components/card/navigation.svelte";
+  import { MetaTags } from "svelte-meta-tags";
 </script>
 
 <svelte:head>
   <title>About - Flunty's Website</title>
   <link rel="stylesheet" href="styles/about.css" />
 </svelte:head>
+
+<MetaTags
+  title="About - Flunty's Website"
+  description="About Flunty, a teenager from Indonesia who loves programming, developing, and gaming."
+  openGraph={{
+    title: "About - Flunty's Website",
+    description: "About Flunty, a teenager from Indonesia who loves programming, developing, and gaming.",
+    images: [
+      {
+        url: 'https://flunty.xyz/logo.png',
+        alt: "Flunty's Logo",
+        width: 512,
+        height: 512,
+        secureUrl: 'https://flunty.xyz/logo.png',
+        type: 'image/png'
+      },
+    ],
+  }}
+  twitter={{
+    title: "About - Flunty's Website",
+    description: "About Flunty, a teenager from Indonesia who loves programming, developing, and gaming.",
+    image: 'https://flunty.xyz/logo.png',
+  }}
+/>
 
 <Card width="56.25rem" height="33.75rem" style="">
   <Navigation>About</Navigation>

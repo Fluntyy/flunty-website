@@ -5,6 +5,7 @@
   import SocialsButton from "../../components/socials_button.svelte";
   import { api } from "../../api";
   import { projectsStore } from "$lib/stores.js";
+  import { MetaTags } from "svelte-meta-tags";
 
   let isLoading = $state();
   let projects = $state();
@@ -45,15 +46,39 @@
   <link rel="stylesheet" href="styles/projects.css" />
 </svelte:head>
 
+<MetaTags
+  title="Projects - Flunty's Website"
+  description="Explore Flunty's projects — a teenager from Indonesia who loves programming, developing, and gaming."
+  openGraph={{
+    title: "Projects - Flunty's Website",
+    description: "Explore Flunty's projects — a teenager from Indonesia who loves programming, developing, and gaming.",
+    images: [
+      {
+        url: 'https://flunty.xyz/logo.png',
+        alt: "Flunty's Logo",
+        width: 512,
+        height: 512,
+        secureUrl: 'https://flunty.xyz/logo.png',
+        type: 'image/png'
+      },
+    ],
+  }}
+  twitter={{
+    title: "Projects - Flunty's Website",
+    description: "Explore Flunty's projects — a teenager from Indonesia who loves programming, developing, and gaming.",
+    image: 'https://flunty.xyz/logo.png',
+  }}
+/>
+
 <Card width="56.25rem" height="33.75rem" style="">
   <div class="nav-wrapper">
     <Navigation>Projects</Navigation>
     <div class="projects-nav-wrapper">
-      <button class="projects-nav" onclick={prev}>
+      <button class="projects-nav" onclick={prev} aria-label="Go to previous project">
         <i class="fa-solid fa-angle-left" style="font-size: 2rem;"></i>
       </button>
       <span class="projects-counter montserrat-semibold" style="font-size: 1.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); width: 2rem; text-align: center;">{currentIndex + 1}/{projects.length}</span>
-      <button class="projects-nav" onclick={next}>
+      <button class="projects-nav" onclick={next} aria-label="Go to next project">
         <i class="fa-solid fa-angle-right" style="font-size: 2rem;"></i>
       </button>
     </div>
@@ -70,20 +95,20 @@
           <span class="description montserrat-semibold" style="font-size: 1rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">{projects[currentIndex].description} • {projects[currentIndex].date}</span>
         </div>
         <div class="links">
-          <a href={projects[currentIndex].githubLink} target="_blank" alt="GitHub Repository"><i class="fa-brands fa-github" style="font-size: 1.5rem;"></i></a>
+          <a href={projects[currentIndex].githubLink} target="_blank" alt="GitHub Repository" aria-label="GitHub Repository"><i class="fa-brands fa-github" style="font-size: 1.5rem;"></i></a>
           {#if projects[currentIndex].projectLink}
-            <a href={projects[currentIndex].projectLink} target="_blank" alt="Open Project"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 1.5rem;"></i></a>
+            <a href={projects[currentIndex].projectLink} target="_blank" alt="Open Project" aria-label="Open Project"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 1.5rem;"></i></a>
           {/if}
         </div>
       </div>
     </div>
   {/if}
   <div class="projects-nav-wrapper-mobile">
-    <button class="projects-nav" onclick={prev}>
+    <button class="projects-nav" onclick={prev} aria-label="Go to previous project">
       <i class="fa-solid fa-angle-left" style="font-size: 2rem;"></i>
     </button>
     <span class="projects-counter montserrat-semibold" style="font-size: 1.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); width: 2rem; text-align: center;">{currentIndex + 1}/{projects.length}</span>
-    <button class="projects-nav" onclick={next}>
+    <button class="projects-nav" onclick={next} aria-label="Go to next project">
       <i class="fa-solid fa-angle-right" style="font-size: 2rem;"></i>
     </button>
   </div>
