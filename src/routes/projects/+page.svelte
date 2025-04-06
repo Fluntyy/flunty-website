@@ -10,27 +10,45 @@
   let isLoading = $state();
   let projects = $state();
   let currentIndex = $state(0);
+  let preloadedImages = {};
 
   projectsStore.subscribe(value => {
     isLoading = value.isLoading;
     projects = value.projects;
   });
 
-  onMount(() => {
+  onMount(async () => {
+    let projects = [];
+    projectsStore.subscribe(value => {
+      projects = value.projects;
+    });
+
     if (projects.length === 0) {
-      api.get("projects")
-        .then((res) => {
-          const fetchedProjects = res.data.data.map(project => ({
-            ...project,
-            date: new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-          }));
-          projectsStore.set({ isLoading: false, projects: fetchedProjects });
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+      try {
+        const res = await api.get("projects");
+        const fetchedProjects = res.data.data.map(project => ({
+          ...project,
+          date: new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        }));
+        projectsStore.set({ isLoading: false, projects: fetchedProjects });
+        preloadImages(fetchedProjects);
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      preloadImages(projects);
     }
   });
+
+  function preloadImages(projects) {
+    projects.forEach(project => {
+      if (project.backgroundImage) {
+        const img = new Image();
+        img.src = project.backgroundImage;
+        preloadedImages[project.backgroundImage] = img; // Store the preloaded image
+      }
+    });
+  }
 
   function prev() {
     currentIndex = (currentIndex - 1 + projects.length) % projects.length;
@@ -89,7 +107,9 @@
     </div>
   {:else}
     <div class="projects-container">
-      <div class="projects-card" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.70) 0%,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0) 100%),url({projects[currentIndex].backgroundImage});">
+      <div
+        class="projects-card"
+        style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.70) 0%,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0) 100%),url({preloadedImages[projects[currentIndex].backgroundImage]?.src});">
         <div class="project-details">
           <span class="title montserrat-bold" style="font-size: 2rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">{projects[currentIndex].title}</span>
           <span class="description montserrat-semibold" style="font-size: 1rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">{projects[currentIndex].description} • {projects[currentIndex].date}</span>
