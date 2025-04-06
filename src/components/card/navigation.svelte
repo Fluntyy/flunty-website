@@ -1,14 +1,16 @@
 <script>
+  /** @type {{children?: import('svelte').Snippet}} */
+  let { children } = $props();
   function back() {
     window.history.back();
   }
 </script>
 
 <div class="nav">
-  <button class="back" on:click={back}>
+  <button class="back" onclick={back}>
     <i class="fa-solid fa-arrow-left"></i>
   </button>
-  <span class="montserrat-bold navtitle" style="font-size: 2.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"><slot></slot></span>
+  <span class="montserrat-bold navtitle" style="font-size: 2.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">{@render children?.()}</span>
 </div>
 
 <style>

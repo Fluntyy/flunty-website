@@ -2,9 +2,13 @@
   import { fade, opacity } from '$lib/stores.js';
   import { scale } from "svelte/transition";
   import { onMount } from "svelte";
-  export let width;
-  export let height;
-  export let style;
+  /** @type {{width: any, height: any, style: any, children?: import('svelte').Snippet}} */
+  let {
+    width,
+    height,
+    style,
+    children
+  } = $props();
 
   let socials;
 
@@ -19,7 +23,7 @@
 
 <div class="card-container">
   <div class="card" style="width: {width}; height: {height}; {style};" class:fade={$fade == 1} class:opacity={$opacity == 1} transition:scale>
-    <slot />
+    {@render children?.()}
   </div>
 </div>
 

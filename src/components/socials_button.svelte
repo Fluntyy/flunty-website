@@ -1,14 +1,25 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  export let backgroundColor;
-  export let hoverBackgroundColor;
-  export let iconPath;
-  export let platformName;
-  export let profileName;
-  export let link;
+  interface Props {
+    backgroundColor: any;
+    hoverBackgroundColor: any;
+    iconPath: any;
+    platformName: any;
+    profileName: any;
+    link: any;
+  }
 
-  let isShiftHeld = false;
+  let {
+    backgroundColor,
+    hoverBackgroundColor,
+    iconPath,
+    platformName,
+    profileName,
+    link
+  }: Props = $props();
+
+  let isShiftHeld = $state(false);
 
   function handleKeydown(event: KeyboardEvent) {
     if (event.key === "Shift") {
@@ -32,10 +43,10 @@
     };
   });
 
-  $: twitterBackgroundColor = "#1D9BF0";
-  $: twitterHoverBackgroundColor = "#1A8BD8";
-  $: twitterIconPath = "icon/twitter.svg";
-  $: twitterPlatformName = "Twitter";
+  let twitterBackgroundColor = $derived("#1D9BF0");
+  let twitterHoverBackgroundColor = $derived("#1A8BD8");
+  let twitterIconPath = $derived("icon/twitter.svg");
+  let twitterPlatformName = $derived("Twitter");
 </script>
 
 <a

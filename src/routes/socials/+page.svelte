@@ -6,8 +6,8 @@
   import { api } from "../../api";
   import { socialsStore } from "$lib/stores.js";
 
-  let isLoading;
-  let socials;
+  let isLoading = $state();
+  let socials = $state();
 
   socialsStore.subscribe(value => {
     isLoading = value.isLoading;

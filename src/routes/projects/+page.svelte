@@ -6,9 +6,9 @@
   import { api } from "../../api";
   import { projectsStore } from "$lib/stores.js";
 
-  let isLoading;
-  let projects;
-  let currentIndex = 0;
+  let isLoading = $state();
+  let projects = $state();
+  let currentIndex = $state(0);
 
   projectsStore.subscribe(value => {
     isLoading = value.isLoading;
@@ -49,11 +49,11 @@
   <div class="nav-wrapper">
     <Navigation>Projects</Navigation>
     <div class="projects-nav-wrapper">
-      <button class="projects-nav" on:click={prev}>
+      <button class="projects-nav" onclick={prev}>
         <i class="fa-solid fa-angle-left" style="font-size: 2rem;"></i>
       </button>
       <span class="projects-counter montserrat-semibold" style="font-size: 1.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); width: 2rem; text-align: center;">{currentIndex + 1}/{projects.length}</span>
-      <button class="projects-nav" on:click={next}>
+      <button class="projects-nav" onclick={next}>
         <i class="fa-solid fa-angle-right" style="font-size: 2rem;"></i>
       </button>
     </div>
@@ -79,11 +79,11 @@
     </div>
   {/if}
   <div class="projects-nav-wrapper-mobile">
-    <button class="projects-nav" on:click={prev}>
+    <button class="projects-nav" onclick={prev}>
       <i class="fa-solid fa-angle-left" style="font-size: 2rem;"></i>
     </button>
     <span class="projects-counter montserrat-semibold" style="font-size: 1.25rem; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); width: 2rem; text-align: center;">{currentIndex + 1}/{projects.length}</span>
-    <button class="projects-nav" on:click={next}>
+    <button class="projects-nav" onclick={next}>
       <i class="fa-solid fa-angle-right" style="font-size: 2rem;"></i>
     </button>
   </div>

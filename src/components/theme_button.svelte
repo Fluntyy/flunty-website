@@ -1,10 +1,10 @@
 <script>
   import { onMount } from "svelte";
 
-  let favicon = "/favicon.svg";
+  let favicon = $state("/favicon.svg");
   let theme = "light";
-  let icon = "/moon.svg";
-  let themecolor = "#5e7c92";
+  let icon = $state("/moon.svg");
+  let themecolor = $state("#5e7c92");
 
   const toggleTheme = () => {
     theme = theme === "dark" ? "light" : "dark";
@@ -51,7 +51,7 @@
   <meta name="theme-color" content={themecolor}>
 </svelte:head>
 
-<button type="button" on:click={toggleTheme} class="theme-button" tabindex="0">
+<button type="button" onclick={toggleTheme} class="theme-button" tabindex="0">
   <img src={icon} alt="Toggle Theme" class="theme-icon" draggable="false" />
 </button>
 

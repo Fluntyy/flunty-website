@@ -4,6 +4,11 @@
   import ThemeButton from "../components/theme_button.svelte";
   import { fade, opacity, socials } from "$lib/stores.js";
   import { onMount } from "svelte";
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 
   onMount(() => {
     fade.set(1);
@@ -21,4 +26,4 @@
 <Background></Background>
 <ThemeButton></ThemeButton>
 
-<slot />
+{@render children?.()}
