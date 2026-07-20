@@ -3,7 +3,7 @@
   import Card from "../../components/card/card.svelte";
   import Navigation from "../../components/card/navigation.svelte";
   import SocialsButton from "../../components/socials_button.svelte";
-  import { api } from "../../api";
+  import { api, currentBaseURL } from "../../api";
   import { socialsStore } from "$lib/stores.js";
   import { MetaTags } from "svelte-meta-tags";
 
@@ -68,7 +68,7 @@
           <SocialsButton
             backgroundColor={social.backgroundColor}
             hoverBackgroundColor={social.hoverBackgroundColor}
-            iconPath={`https://api.flunty.xyz${social.iconPath}`}
+            iconPath={`${currentBaseURL}${social.iconPath}`}
             platformName={social.platformName}
             profileName={social.profileName}
             link={`/${social.platformName.toLowerCase()}`}

@@ -1,12 +1,14 @@
 import axios from "axios";
 
-const primaryBaseURL = "https://api.flunty.xyz/";
-const fallbackBaseURL = "https://flunty-api.vercel.app/";
+export const primaryBaseURL = "https://api.flunty.xyz/";
+export const fallbackBaseURL = "https://flunty-api.vercel.app/";
 
 export const api = axios.create({
   baseURL: primaryBaseURL,
   timeout: 5000,
 });
+
+export let currentBaseURL = primaryBaseURL;
 
 api.interceptors.response.use(
   (response) => response,
@@ -27,6 +29,7 @@ api.interceptors.response.use(
 
     config._usedFallback = true;
     config.baseURL = fallbackBaseURL;
+    currentBaseURL = fallbackBaseURL;
 
     return api.request(config);
   }
